@@ -1,0 +1,42 @@
+@use "../../../styles/tokens" as *;
+
+.product-crumbs {
+  background: var(--color-banner);
+}
+
+.product-crumbs__list {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  gap: 22px;
+}
+
+.product-crumbs__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  font-size: var(--fs-base);
+  line-height: 24px;
+}
+
+.product-crumbs__link {
+  color: var(--color-text-soft);
+}
+
+.product-crumbs__current {
+  color: var(--color-black);
+}
+
+@include below($bp-768) {
+  .product-crumbs__list {
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding-block: 16px;
+  }
+
+  .product-crumbs__current {
+    overflow-wrap: anywhere;
+  }
+}

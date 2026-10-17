@@ -1,0 +1,99 @@
+@use "../../../styles/tokens" as *;
+
+.feature-bar {
+  display: flex;
+  align-items: center;
+  min-height: var(--feature-height);
+  background: var(--color-feature);
+}
+
+.feature-bar__list {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.feature-bar__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.feature-bar__title {
+  font-size: var(--fs-feature);
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+  color: var(--color-title);
+}
+
+.feature-bar__text {
+  font-size: var(--fs-feature-text);
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
+  color: var(--color-gray-3);
+}
+
+@include below($bp-1250) {
+  .feature-bar__list {
+    grid-template-columns: repeat(2, minmax(0, max-content));
+    justify-content: space-between;
+    gap: 32px 24px;
+    padding: 40px 0;
+  }
+}
+
+@include below($bp-768) {
+  .feature-bar {
+    min-height: 0;
+  }
+
+  .feature-bar__list {
+    gap: 28px 20px;
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .feature-bar__item {
+    gap: 12px;
+  }
+
+  .feature-bar__item .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .feature-bar__title {
+    font-size: 20px;
+  }
+
+  .feature-bar__text {
+    font-size: 16px;
+  }
+}
+
+@include below($bp-320) {
+  .feature-bar__list {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+    padding: 28px 0;
+  }
+
+  .feature-bar__item .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feature-bar__title {
+    font-size: 18px;
+  }
+
+  .feature-bar__text {
+    font-size: 14px;
+  }
+}

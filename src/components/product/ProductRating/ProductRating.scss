@@ -1,0 +1,32 @@
+.product-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-rating--button {
+  gap: 18px;
+}
+
+.product-rating__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--color-text-soft);
+}
+
+.product-rating__count {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-soft);
+  white-space: nowrap;
+}
+
+.product-rating--light {
+  .product-rating__divider {
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .product-rating__count {
+    color: var(--color-white);
+  }
+}

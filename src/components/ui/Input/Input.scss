@@ -1,0 +1,36 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field__label {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  line-height: 24px;
+  color: var(--color-black);
+}
+
+.field__control {
+  width: 100%;
+  height: var(--control-height);
+  padding: 0 30px;
+  border: 1px solid var(--color-text-soft);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  outline: none;
+  transition: border-color 0.25s ease;
+
+  &::placeholder {
+    color: var(--color-text-soft);
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+}
+
+.field--invalid .field__control,
+.field--invalid .field__control:focus {
+  border-color: var(--color-red);
+}

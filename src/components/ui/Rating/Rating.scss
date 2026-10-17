@@ -1,0 +1,25 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating__star {
+  position: relative;
+  width: 18px;
+  height: 18px;
+}
+
+.rating__part {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rating__part .icon {
+  width: 18px;
+  max-width: none;
+  height: 18px;
+}

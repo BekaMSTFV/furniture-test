@@ -1,0 +1,243 @@
+@use "../../../styles/tokens" as *;
+
+.contact {
+  padding: 110px 0 64px;
+}
+
+.contact__intro {
+  width: min(644px, calc(100% - 48px));
+  margin: 0 auto 135px;
+  text-align: center;
+}
+
+.contact__title {
+  font-size: 36px;
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  color: var(--color-black);
+}
+
+.contact__lead {
+  margin-top: 19px;
+  color: var(--color-text-soft);
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.contact__body {
+  display: grid;
+  grid-template-columns: 393px 635px;
+  gap: 30px;
+  justify-content: center;
+  width: min(1058px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 14px 0 0 53px;
+}
+
+.contact-info__item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 200px);
+  column-gap: 22px;
+  align-items: start;
+}
+
+.contact-info__item .icon {
+  margin-top: 2px;
+  justify-self: center;
+}
+
+.contact-info__title {
+  font-size: 24px;
+  font-weight: var(--fw-medium);
+  line-height: 1.2;
+  color: var(--color-black);
+}
+
+.contact-info__text {
+  margin-top: 8px;
+  color: var(--color-black);
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.contact__form {
+  padding: 0 54px;
+}
+
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.contact__message .field__control {
+  height: 119px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  resize: none;
+}
+
+.contact__submit.button {
+  width: 236px;
+  height: 54px;
+  margin-top: 50px;
+  padding: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: var(--fw-regular);
+}
+
+@include below($bp-1250) {
+  .contact {
+    padding-top: 80px;
+  }
+
+  .contact__intro {
+    width: min(644px, calc(100% - var(--page-gutter) * 2));
+    margin-bottom: 80px;
+  }
+
+  .contact__body {
+    grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+    width: min(1058px, calc(100% - var(--page-gutter) * 2));
+  }
+
+  .contact-info {
+    gap: 36px;
+    padding-left: 0;
+  }
+
+  .contact__form {
+    padding-inline: 16px;
+  }
+}
+
+@include below($bp-1024) {
+  .contact__title {
+    font-size: 30px;
+  }
+
+  .contact__lead {
+    font-size: 15px;
+  }
+
+  .contact-info__title {
+    font-size: 20px;
+  }
+
+  .contact-info__item .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@include below($bp-768) {
+  .contact {
+    padding: 56px 0 40px;
+  }
+
+  .contact__intro {
+    margin-bottom: 40px;
+  }
+
+  .contact__title {
+    font-size: 28px;
+  }
+
+  .contact__lead {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .contact__body {
+    grid-template-columns: 1fr;
+    width: min(635px, calc(100% - var(--page-gutter) * 2));
+  }
+
+  .contact-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px 32px;
+  }
+
+  .contact-info__item {
+    flex: 0 1 220px;
+    justify-content: center;
+  }
+
+  .contact-info__title {
+    font-size: 18px;
+  }
+
+  .contact-info__text {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .contact-info__item .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .contact__form {
+    padding: 0;
+  }
+
+  .contact__fields {
+    gap: 20px;
+  }
+
+  .contact__form .field {
+    gap: 12px;
+  }
+
+  .contact__form .field__label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .contact__form .field__control {
+    height: 56px;
+    padding-inline: 16px;
+    font-size: 14px;
+  }
+
+  .contact__message .field__control {
+    height: 108px;
+  }
+
+  .contact__submit.button {
+    display: flex;
+    margin-top: 28px;
+    margin-inline: auto;
+  }
+}
+
+@include below($bp-320) {
+  .contact__title {
+    font-size: 24px;
+  }
+
+  .contact-info__item {
+    flex-basis: 100%;
+  }
+
+  .contact__form .field__control {
+    height: 48px;
+  }
+
+  .contact__message .field__control {
+    height: 96px;
+  }
+
+  .contact__submit.button {
+    width: min(236px, 100%);
+  }
+}

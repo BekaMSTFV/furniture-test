@@ -1,0 +1,22 @@
+.select {
+  position: relative;
+  display: block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid var(--color-black);
+    border-bottom: 1.5px solid var(--color-black);
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+  }
+}
+
+.select__control {
+  appearance: none;
+  padding-right: 48px;
+}

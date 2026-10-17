@@ -1,0 +1,31 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 381px;
+  color: var(--color-black);
+}
+
+.category-card__media,
+.category-card__placeholder {
+  display: block;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--color-bg-light);
+}
+
+.category-card__media img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.category-card__title {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+}

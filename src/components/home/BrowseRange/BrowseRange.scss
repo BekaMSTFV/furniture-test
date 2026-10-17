@@ -1,0 +1,140 @@
+@use "../../../styles/tokens" as *;
+
+.browse {
+  padding: 56px 0;
+}
+
+.browse__title {
+  font-size: 32px;
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-font);
+}
+
+.browse__text {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-font-secondary);
+}
+
+.browse__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 381px));
+  justify-content: center;
+  gap: 20px;
+  width: min(1183px, calc(100% - 48px));
+  margin: 62px auto 0;
+}
+
+@include below($bp-1250) {
+  .browse__title {
+    padding-inline: var(--page-gutter);
+    font-size: 30px;
+  }
+
+  .browse__text {
+    padding-inline: var(--page-gutter);
+    font-size: 18px;
+  }
+
+  .browse__list {
+    width: min(1183px, calc(100% - (var(--page-gutter) * 2)));
+  }
+}
+
+@include below($bp-1024) {
+  .browse__title {
+    font-size: 28px;
+  }
+
+  .browse .category-card__media,
+  .browse .category-card__media img,
+  .browse .category-card__placeholder {
+    height: 360px;
+  }
+
+  .browse .category-card__title {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+}
+
+@include below($bp-768) {
+  .browse {
+    overflow: hidden;
+  }
+
+  .browse__title {
+    font-size: 26px;
+  }
+
+  .browse__text {
+    font-size: 16px;
+  }
+
+  .browse__list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 32px;
+    padding-inline: var(--page-gutter);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--page-gutter);
+    scrollbar-width: none;
+  }
+
+  .browse__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .browse .category-card {
+    flex: 0 0 70%;
+    width: 70%;
+    min-width: 0;
+    max-width: none;
+    scroll-snap-align: center;
+  }
+
+  .browse .category-card__media,
+  .browse .category-card__media img,
+  .browse .category-card__placeholder {
+    height: 300px;
+  }
+
+  .browse .category-card__title {
+    margin-top: 16px;
+    font-size: 20px;
+  }
+}
+
+@include below($bp-320) {
+  .browse__title {
+    font-size: 22px;
+  }
+
+  .browse__text {
+    font-size: 14px;
+  }
+
+  .browse .category-card {
+    flex-basis: 78%;
+    width: 78%;
+  }
+
+  .browse .category-card__media,
+  .browse .category-card__media img,
+  .browse .category-card__placeholder {
+    height: 240px;
+  }
+
+  .browse .category-card__title {
+    font-size: 18px;
+  }
+}

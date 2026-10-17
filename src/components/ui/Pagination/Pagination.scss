@@ -1,0 +1,149 @@
+@use "../../../styles/tokens" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  gap: 38px;
+  position: relative;
+}
+
+.pagination__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 38px;
+  max-width: 70%;
+}
+
+.pagination__item {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-control);
+  background: var(--color-banner);
+  font-size: 20px;
+  font-weight: var(--fw-regular);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &--active {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &--prev,
+  &--next {
+    width: 98px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      width 0.3s ease,
+      margin 0.3s ease,
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  &--hidden {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &--prev#{&}--hidden {
+    margin-right: -38px;
+  }
+
+  &--next#{&}--hidden {
+    margin-left: -38px;
+  }
+
+  &:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+}
+
+@include below($bp-1250) {
+  .pagination {
+    width: calc(100% - var(--page-gutter) * 2);
+  }
+
+  .pagination__items {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    justify-content: safe center;
+    min-width: 0;
+    max-width: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .pagination__item,
+  .pagination__item--prev,
+  .pagination__item--next {
+    flex: 0 0 auto;
+  }
+}
+
+@include below($bp-768) {
+  .pagination,
+  .pagination__items {
+    gap: 12px;
+  }
+
+  .pagination__item {
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .pagination__item--prev,
+  .pagination__item--next {
+    width: 72px;
+  }
+
+  .pagination__item--prev.pagination__item--hidden {
+    margin-right: -12px;
+  }
+
+  .pagination__item--next.pagination__item--hidden {
+    margin-left: -12px;
+  }
+}
+
+@include below($bp-320) {
+  .pagination,
+  .pagination__items {
+    gap: 8px;
+  }
+
+  .pagination__item {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .pagination__item--prev,
+  .pagination__item--next {
+    width: 64px;
+  }
+
+  .pagination__item--prev.pagination__item--hidden {
+    margin-right: -8px;
+  }
+
+  .pagination__item--next.pagination__item--hidden {
+    margin-left: -8px;
+  }
+}

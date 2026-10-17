@@ -1,0 +1,20 @@
+@use "tokens" as *;
+
+body {
+  background: var(--color-white);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.page-section {
+  min-height: 240px;
+}
+
+@include below($bp-1250) {
+  .container {
+    padding-inline: var(--page-gutter);
+  }
+}

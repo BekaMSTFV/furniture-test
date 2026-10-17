@@ -1,0 +1,119 @@
+@use "../styles/tokens" as *;
+
+.cart-page__layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: min(var(--container-width), calc(100% - 48px));
+  margin: 72px auto 85px;
+}
+
+.cart-table {
+  flex: 1 1 817px;
+  min-width: 0;
+}
+
+.cart-table__head,
+.cart-line {
+  display: grid;
+  grid-template-columns: minmax(220px, 2.4fr) minmax(120px, 1.15fr) minmax(110px, 1fr) minmax(130px, 1.2fr) 36px;
+  align-items: center;
+}
+
+.cart-table__head {
+  height: 55px;
+  background: var(--color-banner);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--color-black);
+}
+
+.cart-table__head span {
+  text-align: center;
+}
+
+.cart-table__body {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding-top: 55px;
+}
+
+@include below($bp-1250) {
+  .cart-page__layout {
+    flex-direction: column;
+    align-items: stretch;
+    width: min(var(--container-width), calc(100% - var(--page-gutter) * 2));
+    margin-top: 48px;
+  }
+
+  .cart-table {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+@include below($bp-768) {
+  .cart-page__layout {
+    gap: 32px;
+    margin-bottom: 56px;
+  }
+
+  .cart-table__head {
+    display: none;
+  }
+
+  .cart-table__head,
+  .cart-line {
+    grid-template-columns: none;
+  }
+
+  .cart-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 20px;
+    padding: 20px 0;
+  }
+
+  .cart-table__body {
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .cart-line:not(:last-child) {
+    border-bottom: 1px solid var(--color-text-soft);
+  }
+
+  .cart-line__product {
+    flex: 1 0 100%;
+  }
+
+  .cart-line__price {
+    flex: 1 1 auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .cart-line__subtotal {
+    margin-left: auto;
+  }
+}
+
+@include below($bp-320) {
+  .cart-line__image {
+    flex-basis: 80px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-line__product {
+    gap: 16px;
+  }
+
+  .cart-line__name,
+  .cart-line__price,
+  .cart-line__subtotal {
+    font-size: 14px;
+  }
+}

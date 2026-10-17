@@ -1,0 +1,79 @@
+$bp-1250: 1250px;
+$bp-1024: 1024px;
+$bp-768: 768px;
+$bp-320: 320px;
+
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+:root {
+  --font-family-base: "Poppins", "Segoe UI", sans-serif;
+  --font-family-logo: "Montserrat", "Segoe UI", sans-serif;
+
+  --color-primary: #b88e2f;
+  --color-font: #333333;
+  --color-font-secondary: #666666;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-bg-light: #f4f5f7;
+  --color-cream: #fff3e3;
+  --color-banner: #f9f1e7;
+  --color-feature: #faf3ea;
+  --color-gray-1: #3a3a3a;
+  --color-gray-2: #616161;
+  --color-gray-3: #898989;
+  --color-gray-4: #b0b0b0;
+  --color-gray-5: #d8d8d8;
+  --color-text-soft: #9f9f9f;
+  --color-red: #e97171;
+  --color-green: #2ec1ac;
+  --color-border: rgba(0, 0, 0, 0.17);
+  --color-title: #242424;
+
+  --fs-logo: 34px;
+  --fs-h1: 48px;
+  --fs-h2: 32px;
+  --fs-h3: 24px;
+  --fs-price: 20px;
+  --fs-feature: 25px;
+  --fs-feature-text: 20px;
+  --fs-base: 16px;
+  --fs-small: 14px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.2;
+  --lh-base: 1.5;
+
+  --bp-1250: #{$bp-1250};
+  --bp-1024: #{$bp-1024};
+  --bp-768: #{$bp-768};
+  --bp-320: #{$bp-320};
+  --page-gutter: 15px;
+
+  --container-width: 1240px;
+  --container-padding: 100px;
+  --header-height: 100px;
+  --header-padding-left: 54px;
+  --banner-height: 316px;
+  --footer-offset: 100px;
+  --feature-height: 270px;
+
+  --space-2xs: 8px;
+  --space-xs: 10px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 100px;
+
+  --radius-control: 10px;
+  --control-height: 75px;
+  --button-height: 48px;
+}
